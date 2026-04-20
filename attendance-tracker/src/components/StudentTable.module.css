@@ -1,0 +1,238 @@
+.tableWrap {
+  border: 0.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--bg-card);
+  border-bottom: 0.5px solid var(--border-subtle);
+}
+
+th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.row {
+  border-bottom: 0.5px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background 0.12s;
+  animation: fadeSlideIn 0.3s ease both;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--bg-hover); }
+.row.selected { background: var(--bg-selected); }
+.row.selected:hover { background: var(--bg-selected); }
+
+td {
+  padding: 13px 16px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.colStudent { width: 26%; min-width: 200px; }
+.colId { width: 7%; }
+.colAttendance { width: 24%; }
+.colStatus { width: 13%; }
+.colSessions { width: 10%; }
+.colContact { width: 20%; }
+
+@media (max-width: 800px) {
+  .colContact, .colId { display: none; }
+  .colStudent { width: 30%; }
+}
+
+@media (max-width: 580px) {
+  .colSessions { display: none; }
+  .colStudent { width: 35%; }
+}
+
+.studentCell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.studentInfo { min-width: 0; }
+
+.studentName {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studentMeta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.idBadge {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 0.5px solid var(--border-subtle);
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.3px;
+}
+
+.attCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.attBar {
+  flex: 1;
+  height: 5px;
+  background: var(--bg-card);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 50px;
+}
+
+.attFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.attPct {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 36px;
+  text-align: right;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sessions {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sessionTotal {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.email {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 180px;
+}
+
+/* Skeleton */
+.skeleton {
+  background: var(--bg-card);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.skelLine {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--bg-card);
+  animation: pulse 1.5s ease-in-out infinite;
+  margin: 3px 0;
+}
+
+.skelName { width: 120px; height: 13px; }
+.skelMeta { width: 80px; }
+.skelShort { width: 50px; }
+.skelMed { width: 100px; }
+
+/* Empty */
+.empty {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  filter: grayscale(0.5);
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.emptyDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
